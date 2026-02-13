@@ -1,0 +1,39 @@
+" Map leader to <space>
+let mapleader = " "
+
+" Bind s to Flash instead of behaving like c1
+nmap s <Action>(flash.search)
+xmap s <Action>(flash.search)
+set belloff=all
+set visualbell
+set noerrorbells
+
+" The popup to see available keys
+set which-key
+set notimeout
+let g:WhichKey_FontSize = 20
+
+" Highlight optimal jump targets
+set quickscope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+" More objects (args, functions, classes, etc.)
+set anyobject
+
+" Override function custom objects so they handle decorators (unlike anyobject)
+set functiontextobj
+
+" Override arg custom objects so the spaces around arguments are handled (unlink anyobject²)
+set argtextobj
+
+" Comment with gcc / gc<motion>
+set commentary
+
+" Replace content without the replaced content overriding the register
+set ReplaceWithRegister
+
+" Motions inside the file
+set nerdtree
+
+
+nmap <leader>f <Action>(GotoFile)
