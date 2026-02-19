@@ -37,13 +37,13 @@ set nerdtree
 nnoremap <leader>ga :<C-u>action GotoAction<CR>
 nnoremap <leader>gc :<C-u>action GotoClass<CR>
 nnoremap <leader>gd :<C-u>action GotoDeclaration<CR>
-nnoremap <leader>gs :<C-u>action GotoSuperMethod<CR>
 nnoremap <leader>gi :<C-u>action GotoImplementation<CR>
 nnoremap <leader>gf :<C-u>action GotoFile<CR>
 nnoremap <leader>gm :<C-u>action GotoSymbol<CR>
 nnoremap <leader>gl :<C-u>action JumpToLastChange<CR>
 nnoremap <leader>gu :<C-u>action ShowUsages<CR>
-nnoremap <leader>gp :<C-u>action FindInPath<CR>
+nnoremap <leader>gs :<C-u>action FindInPath<CR>
+vnoremap <leader>gs :<C-u>action FindInPath<CR>
 nnoremap <leader>gr :<C-u>action RecentFiles<CR>
 
 " (R)eplace
@@ -56,11 +56,23 @@ nnoremap <Leader>to :tabo<CR>
 
 nnoremap <C-l> :action NextTab<CR>
 nnoremap <C-h> :action PreviousTab<CR>
-nnoremap <C-k> :tabc<CR>  " k for kill (c & w are really weird to hit with Ctrl...)
+" k for kill (c & w are really weird to hit with Ctrl...)
+nnoremap <C-k> :tabc<CR>
 
-" (L)ines
-nnoremap <leader>lr :action Vcs.RollbackChangedLines<CR>
-nnoremap <leader>lb :action Annotate<CR>
-vnoremap <leader>lc :<C-u>action CommentByLineComment<CR>
+" (A)ction
+nnoremap <leader>ar :action Vcs.RollbackChangedLines<CR>
+" Annotate = blame
+nnoremap <leader>ab :action Annotate<CR>
+vnoremap <leader>ac :<C-u>action CommentByLineComment<CR>
+nnoremap <leader>ao :action OptimizeImports<CR>
+nnoremap <leader>ai :action ShowHoverInfo<CR>
+nnoremap <leader>af :action ReformatCode<CR>
 
-" TODO: tests, run, debug...
+" e(X)exute
+nnoremap <leader>xx :action Run<CR>
+nnoremap <leader>xr :action RerunFailedTests<CR>
+
+" (O)pen
+" TODO: none of this works :madge:
+nnoremap <leader>os :action ShowSettings<CR>
+nnoremap <leader>oc :action editRunConfigurations<CR>
